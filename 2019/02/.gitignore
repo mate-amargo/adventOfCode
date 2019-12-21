@@ -1,0 +1,5 @@
+# Ignore all
+*
+# Unignore haskell source code and input data
+!*.hs
+!input
