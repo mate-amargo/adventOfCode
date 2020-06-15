@@ -35,8 +35,8 @@ generatePath (x1y1:coords) = (x1, y1) : (map (\(x,y) -> (x+x1,y+y1)) $ generateP
 
 connect :: Coord -> Coord -> [Coord]
 connect (x1,y1) (x2,y2)
-  | x1 == x2 = [(x1,y) | y <- if y2-1 >= y1 then [y1..y2-1] else [y1,y1-1..y2-1]]
-  | y1 == y2 = [(x,y1) | x <- if x2-1 >= x1 then [x1..x2-1] else [x1,x1-1..x2-1]]
+  | x1 == x2 = [(x1,y) | y <- if y2-1 >= y1 then [y1..y2-1] else [y1,y1-1..y2+1]]
+  | y1 == y2 = [(x,y1) | x <- if x2-1 >= x1 then [x1..x2-1] else [x1,x1-1..x2+1]]
 
 connectCoords :: [Coord] -> [Coord]
 connectCoords [] = []
